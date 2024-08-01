@@ -128,7 +128,7 @@ public class AllTests extends BaseTest {
 
     //POSITIVE
     @Test
-    @Disabled
+    @Disabled("It's with submit.")
     public void submitOnlyRequiredFields() {
         FormPage formPage = new FormPage(driver);
         formPage.setFullName("Ali Sağlam");
