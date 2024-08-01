@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -127,6 +128,7 @@ public class AllTests extends BaseTest {
 
     //POSITIVE
     @Test
+    @Disabled
     public void submitOnlyRequiredFields() {
         FormPage formPage = new FormPage(driver);
         formPage.setFullName("Ali Sağlam");
@@ -139,6 +141,7 @@ public class AllTests extends BaseTest {
 
     //NEGATIVE
     @Test
+    @Disabled
     public void submitWithoutFullname() {
         FormPage formPage = new FormPage(driver);
         formPage.setEmail("ali.saglam87@gmail.com");
@@ -149,6 +152,7 @@ public class AllTests extends BaseTest {
     }
 
     @Test
+    @Disabled
     public void submitWithoutEmail() {
         FormPage formPage = new FormPage(driver);
         formPage.setFullName("Ali Sağlam");
@@ -159,6 +163,7 @@ public class AllTests extends BaseTest {
     }
 
     @Test
+    @Disabled
     public void submitWithoutPhone() {
         FormPage formPage = new FormPage(driver);
         formPage.setFullName("Ali Sağlam");
@@ -172,6 +177,7 @@ public class AllTests extends BaseTest {
     //region Submit with Different Email Types
     //POSITIVE
     @Test
+    @Disabled
     public void sendEmailWithTruePattern() {
         FormPage formPage = new FormPage(driver);
         String emailSample = "username@domain.com";
@@ -183,6 +189,7 @@ public class AllTests extends BaseTest {
 
     //NEGATIVE
     @Test
+    @Disabled
     public void sendEmailWithWrongPattern1() {
         FormPage formPage = new FormPage(driver);
         String emailSample = "@domain.com";

@@ -10,8 +10,6 @@ public class BasePage {
         this.driver = driver;
     }
 
-    //aşağıdakileri protected yapmak daha mantıklı olmaz mı
-
     String Url = "https://jobs.lever.co/commencis/ae502445-77b6-4e51-9226-1cc91790f2dc/apply";
 
     public WebElement find(By locator) {

@@ -1,8 +1,9 @@
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@ExtendWith(TestResultLogger.class)
 public class BaseTest {
         protected static WebDriver driver;
 

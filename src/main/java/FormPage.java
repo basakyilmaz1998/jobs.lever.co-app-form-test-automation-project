@@ -17,7 +17,7 @@ public class FormPage extends BasePage {
 
     String resumePath = "C:\\Users\\basak\\IdeaProjects\\commenics-test-camp-2024-form-page-automation\\Samples\\CV.pdf";
 
-    //region Locaters
+    //region Locators
     private final By logoLocator = By.cssSelector("a.main-header-logo");
     private final By linkedlnApplyButtonLocator = By.xpath("//*[@id=\"application-form\"]/div[1]/ul/li[1]/div[2]/div/button");
     private final By learnMoreLocator = By.cssSelector("a.learn-more-link");
