@@ -1,80 +1,41 @@
 
 
-# Project Title
+# Commencis Test Camp 2024 Application Form Test Automation Project
 
-One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to **deploy**(Bold Example) the project on a live system.
-
+This is a software test automation for the application form of the Commencis Test Camp 2024, created via the Lever company. <br>
+The page will remain open until August 15, 2024.
+ 
 ### Prerequisites
 
 - chromedriver.exe
-```
-Download version 127.0.6533.99 of chromedriver.exe from: https://googlechromelabs.github.io/chrome-for-testing/
-*Make sure it is compatible with your Chrome browser. You can find your current Chrome version under Settings > About Chrome
-Update the path to chromedriver.exe in the value parameter of the webdriver.chrome.driver property located in BaseTest.java
 
-```
+Make sure chromedriver.exe version:127.0.6533.99, compatible with your Chrome browser.<br>
+You can find your current Chrome version under Settings > About Chrome <br>
+Update the path to chromedriver.exe in the value parameter of the webdriver.chrome.driver property located in src/test/java/BaseTest.java
 
--resume sample
-```
-Download a resume or use an existing file to use in the attachResume Test.
-Update the resumePath variable in FormPage.java with the path to this file.
+## Test Classes
 
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+- **src/test/java/WithoutSubmitTests.java**
+  
+This class contains tests that do not require clicking the submit button. <br><br>
+Content: Tests for opening linked pages, setting inputs, and attaching files.
+  
+- **src/test/java/WithSubmitTests.java**
+  
+This class contains tests that require clicking the submit button.<br>
+The class is annotated with @Disabled to prevent data pollution, as the site is live and accepts data entries.<br>
+Additionally, human verification is required due to reCAPTCHA.<br>
+Therefore, the tests in this class are not intended to be run, but are created to demonstrate the algorithm.<br><br>
+Content: Positive and negative tests for filling required fields, and positive and negative pattern tests for email input.
 
 ## Built With
+* Programming Languages: Java
+* Version Control: Git
+* Environment: JDK 17.0.10
+* IDE: IntelliJ IDEA 2023.3.6
+* Maven 2.22.0
+* Log4j 1.2.17
+* JUnit 5.10.1
+* Selenium 4.23.0
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
