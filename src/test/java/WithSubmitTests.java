@@ -9,8 +9,8 @@ public class WithSubmitTests extends BaseTest{
     @Test
     public void submitOnlyRequiredFields() {
         FormPage formPage = new FormPage(driver);
-        formPage.setFullName("Ali Sağlam");
-        formPage.setEmail("ali.saglam87@gmail.com");
+        formPage.setFullName("Name Lastname");
+        formPage.setEmail("username@domain.com");
         formPage.setPhone("05555555555");
         formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
@@ -21,8 +21,8 @@ public class WithSubmitTests extends BaseTest{
     @Test
     public void submitWithoutFullname() {
         FormPage formPage = new FormPage(driver);
-        formPage.setEmail("ali.saglam87@gmail.com");
-        formPage.setPhone("05555555555");
+        formPage.setEmail("Name Lastname");
+        formPage.setPhone("username@domain.com");
         formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though the required Fullname was not sent.");
@@ -31,8 +31,8 @@ public class WithSubmitTests extends BaseTest{
     @Test
     public void submitWithoutEmail() {
         FormPage formPage = new FormPage(driver);
-        formPage.setFullName("Ali Sağlam");
-        formPage.setPhone("05555555555");
+        formPage.setFullName("Name Lastname");
+        formPage.setPhone("username@domain.com");
         formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though the required Email was not sent.");
@@ -41,8 +41,8 @@ public class WithSubmitTests extends BaseTest{
     @Test
     public void submitWithoutPhone() {
         FormPage formPage = new FormPage(driver);
-        formPage.setFullName("Ali Sağlam");
-        formPage.setEmail("ali.saglam87@gmail.com");
+        formPage.setFullName("Name Lastname");
+        formPage.setEmail("username@domain.com");
         formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though the required Phone was not sent.");
@@ -57,7 +57,7 @@ public class WithSubmitTests extends BaseTest{
         String emailSample = "username@domain.com";
         formPage.setAllRequiredFilesWithoutEmail(formPage);
         formPage.setEmail(emailSample);
-        //formPage.clickSubmitButton();
+        formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though wrong pattern:" + emailSample);}
 
@@ -68,7 +68,7 @@ public class WithSubmitTests extends BaseTest{
         String emailSample = "@domain.com";
         formPage.setAllRequiredFilesWithoutEmail(formPage);
         formPage.setEmail(emailSample);
-        //formPage.clickSubmitButton();
+        formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though wrong pattern:" + emailSample);}
 
@@ -78,7 +78,7 @@ public class WithSubmitTests extends BaseTest{
         String emailSample = "username@";
         formPage.setAllRequiredFilesWithoutEmail(formPage);
         formPage.setEmail(emailSample);
-        //formPage.clickSubmitButton();
+        formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though wrong pattern:" + emailSample);}
     //endregion

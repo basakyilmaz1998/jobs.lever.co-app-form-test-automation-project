@@ -37,7 +37,7 @@ public class WithoutSubmitTests extends BaseTest {
     @Test
     public void setFullame() {
         FormPage formPage = new FormPage(driver);
-        String fullNameSample = "Başak Yılmaz";
+        String fullNameSample = "Name Lastname";
         formPage.setFullName(fullNameSample);
         Assertions.assertEquals(fullNameSample, formPage.getValueOfFullName(), "Fullname value is not correct!");
     }
@@ -45,7 +45,7 @@ public class WithoutSubmitTests extends BaseTest {
     @Test
     public void setEmail() {
         FormPage formPage = new FormPage(driver);
-        String emailSample = "emailSample@gmail.com";
+        String emailSample = "username@domain.com";
         formPage.setEmail(emailSample);
         Assertions.assertEquals(emailSample, formPage.getValueOfEmail(), "Email value is not correct!");
     }
@@ -61,7 +61,7 @@ public class WithoutSubmitTests extends BaseTest {
     @Test
     public void setCurrentLocation() {
         FormPage formPage = new FormPage(driver);
-        String currentLocationSample = "İstanbul";
+        String currentLocationSample = "Location";
         formPage.setCurrentLocation(currentLocationSample);
         Assertions.assertEquals(currentLocationSample, formPage.getValueOfCurrentLocation(), "Current Location value is not correct!");
     }
@@ -69,7 +69,7 @@ public class WithoutSubmitTests extends BaseTest {
     @Test
     public void setCurrentCompany() {
         FormPage formPage = new FormPage(driver);
-        String currentCompanySample = "Selancer Teknoloji";
+        String currentCompanySample = "The Company";
         formPage.setCurrentCompany(currentCompanySample);
         Assertions.assertEquals(currentCompanySample, formPage.getValueOfCurrentCompany(), "Current Company value is not correct!");
     }
@@ -77,7 +77,7 @@ public class WithoutSubmitTests extends BaseTest {
     @Test
     public void setLinkedlnUrl() {
         FormPage formPage = new FormPage(driver);
-        String linkedlnUrlSample = "https://www.linkedin.com/in/basakyilmaz9898/";
+        String linkedlnUrlSample = "https://www.linkedin.com/in/";
         formPage.setLinkedlnUrl(linkedlnUrlSample);
         Assertions.assertEquals(linkedlnUrlSample, formPage.getValueOfLinkedlnUrl(), "Linkedln URL value is not correct!");
     }
@@ -85,7 +85,7 @@ public class WithoutSubmitTests extends BaseTest {
     @Test
     public void setStackOverflowUrl() {
         FormPage formPage = new FormPage(driver);
-        String stackOverflowUrlSample = "https://stackoverflow.com/users/438273/jsejcksn";
+        String stackOverflowUrlSample = "https://stackoverflow.com/";
         formPage.setStackOverFlowUrl(stackOverflowUrlSample);
         Assertions.assertEquals(stackOverflowUrlSample, formPage.getValueOfStackOverFlowUrl(), "Stack Overflow URL value is not correct!");
     }
@@ -93,7 +93,7 @@ public class WithoutSubmitTests extends BaseTest {
     @Test
     public void setGitHubUrl() {
         FormPage formPage = new FormPage(driver);
-        String gitHubUrlSample = "https://github.com/basakyilmaz1998";
+        String gitHubUrlSample = "https://github.com/";
         formPage.seGitHubUrl(gitHubUrlSample);
         Assertions.assertEquals(gitHubUrlSample, formPage.getValueOfGitHubUrl(), "GitHub URL value is not correct!");
     }
@@ -101,7 +101,7 @@ public class WithoutSubmitTests extends BaseTest {
     @Test
     public void setPorfolioUrl() {
         FormPage formPage = new FormPage(driver);
-        String portfolioUrlSample = "https://www.awwwards.com/sites/my-portfolio-italo-santorsula";
+        String portfolioUrlSample = "https://portfolio.adobe.com/examples/";
         formPage.setPortolioUrl(portfolioUrlSample);
         Assertions.assertEquals(portfolioUrlSample, formPage.getValueOfPortfolioUrl(), "Portfolio URL value is not correct!");
     }
@@ -109,7 +109,7 @@ public class WithoutSubmitTests extends BaseTest {
     @Test
     public void setAdditionalInformation() {
         FormPage formPage = new FormPage(driver);
-        String additionalInformationSample = "//";
+        String additionalInformationSample = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
         formPage.setAdditionalInformation(additionalInformationSample);
         Assertions.assertEquals(additionalInformationSample, formPage.getValueOfAdditionalInformation(), "Additional information value is not correct!");
     }

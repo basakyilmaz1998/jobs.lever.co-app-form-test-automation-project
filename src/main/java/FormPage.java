@@ -187,7 +187,7 @@ public class FormPage extends BasePage {
 
     //region setAllRequiredFilesWithoutEmail
     public void setAllRequiredFilesWithoutEmail(FormPage formPage) {
-        formPage.setFullName("Ali Sağlam");
+        formPage.setFullName("Name Lastname");
         formPage.setPhone("05555555555");
     }
     //endregion
