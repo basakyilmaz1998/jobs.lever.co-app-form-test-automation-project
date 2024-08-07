@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestsWithoutSubmit extends BaseTest {
+public class WithoutSubmitTests extends BaseTest {
 
     //region Open Pages
     @Test

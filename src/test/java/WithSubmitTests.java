@@ -2,8 +2,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-@Disabled("This test requires clicking the submit button, which will cause data to be sent. If you want to send the data, please remove the \"@Disabled\" annotation from the class.")
-public class TestsWithSubmit extends BaseTest{
+@Disabled("These tests require clicking the submit button.")
+public class WithSubmitTests extends BaseTest{
 
     //region Submit Required Fields
     @Test
