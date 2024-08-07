@@ -12,7 +12,7 @@ public class WithSubmitTests extends BaseTest{
         formPage.setFullName("Ali Sağlam");
         formPage.setEmail("ali.saglam87@gmail.com");
         formPage.setPhone("05555555555");
-        /*formPage.clickSubmitButton();*/
+        formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application submitted!", isSubmitted, "Although the required elements were provided, the form could not be submitted.");
     }
@@ -23,7 +23,7 @@ public class WithSubmitTests extends BaseTest{
         FormPage formPage = new FormPage(driver);
         formPage.setEmail("ali.saglam87@gmail.com");
         formPage.setPhone("05555555555");
-        //formPage.clickSubmitButton();
+        formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though the required Fullname was not sent.");
     }
@@ -33,7 +33,7 @@ public class WithSubmitTests extends BaseTest{
         FormPage formPage = new FormPage(driver);
         formPage.setFullName("Ali Sağlam");
         formPage.setPhone("05555555555");
-        //formPage.clickSubmitButton();
+        formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though the required Email was not sent.");
     }
@@ -43,7 +43,7 @@ public class WithSubmitTests extends BaseTest{
         FormPage formPage = new FormPage(driver);
         formPage.setFullName("Ali Sağlam");
         formPage.setEmail("ali.saglam87@gmail.com");
-        //formPage.clickSubmitButton();
+        formPage.clickSubmitButton();
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though the required Phone was not sent.");
     }
