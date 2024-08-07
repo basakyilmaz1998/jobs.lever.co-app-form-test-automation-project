@@ -30,9 +30,7 @@ Content: Positive and negative tests for filling required fields, and positive a
 
 ## Built With
 * Programming Languages: Java
-* Version Control: Git
 * Environment: JDK 17.0.10
-* IDE: IntelliJ IDEA 2023.3.6
 * Maven 2.22.0
 * Log4j 1.2.17
 * JUnit 5.10.1
