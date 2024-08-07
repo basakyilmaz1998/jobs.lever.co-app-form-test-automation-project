@@ -9,18 +9,18 @@ The page will remain open until August 15, 2024.
 
 - chromedriver.exe
 
-Make sure chromedriver.exe version:127.0.6533.99, compatible with your Chrome browser.<br>
+Make sure 'chromedriver.exe' version:127.0.6533.99, compatible with your Chrome browser.<br>
 You can find your current Chrome version under Settings > About Chrome <br>
-Update the path to chromedriver.exe in the value parameter of the webdriver.chrome.driver property located in src/test/java/BaseTest.java
+Update the path to 'chromedriver.exe' in the value parameter of the property with the key webdriver.chrome.driver located in 'src/test/java/BaseTest.java'
 
 ## Test Classes
 
-- **src/test/java/WithoutSubmitTests.java**
+- **'src/test/java/WithoutSubmitTests.java'**
   
 This class contains tests that do not require clicking the submit button. <br><br>
 Content: Tests for opening linked pages, setting inputs, and attaching files.
   
-- **src/test/java/WithSubmitTests.java**
+- **'src/test/java/WithSubmitTests.java'**
   
 This class contains tests that require clicking the submit button.<br>
 The class is annotated with @Disabled to prevent data pollution, as the site is live and accepts data entries.<br>
