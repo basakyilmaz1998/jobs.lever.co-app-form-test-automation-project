@@ -1,16 +1,19 @@
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllTests extends BaseTest {
+public class TestsWithoutSubmit extends BaseTest {
 
     //region Open Pages
+    @Test
+    public void openJobOpportunitiesPage() {
+        FormPage formPage = new FormPage(driver);
+        formPage.clickLogo();
+        String newUrl = driver.getCurrentUrl();
+        Assertions.assertEquals("https://jobs.lever.co/commencis", newUrl);
+    }
     @Test
     public void openLearnMorePage() {
         FormPage formPage = new FormPage(driver);
@@ -117,86 +120,10 @@ public class AllTests extends BaseTest {
     public void attachResume() {
         FormPage formPage = new FormPage(driver);
         formPage.attachResume();
-        WebElement resumeSuccess = formPage.find(formPage.resumeSuccessLocator);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(resumeSuccess));
+        WebElement resumeSuccess = formPage.getResumeSuccessElement();
+        formPage.wait(resumeSuccess, 10L);
         Assertions.assertTrue(formPage.isDisplayedSuccessResume(), "Resume can not attach");
     }
     //endregion
 
-    //region Submit Required Fields
-
-    //POSITIVE
-    @Test
-    @Disabled("It's with submit.")
-    public void submitOnlyRequiredFields() {
-        FormPage formPage = new FormPage(driver);
-        formPage.setFullName("Ali Sağlam");
-        formPage.setEmail("ali.saglam87@gmail.com");
-        formPage.setPhone("05555555555");
-        //formPage.clickSubmitButton();
-        String isSubmitted = formPage.checkFormSubmission(formPage);
-        Assertions.assertEquals("Application submitted!", isSubmitted, "Although the required elements were provided, the form could not be submitted.");
-    }
-
-    //NEGATIVE
-    @Test
-    @Disabled
-    public void submitWithoutFullname() {
-        FormPage formPage = new FormPage(driver);
-        formPage.setEmail("ali.saglam87@gmail.com");
-        formPage.setPhone("05555555555");
-        //formPage.clickSubmitButton();
-        String isSubmitted = formPage.checkFormSubmission(formPage);
-        Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though the required Fullname was not sent.");
-    }
-
-    @Test
-    @Disabled
-    public void submitWithoutEmail() {
-        FormPage formPage = new FormPage(driver);
-        formPage.setFullName("Ali Sağlam");
-        formPage.setPhone("05555555555");
-        //formPage.clickSubmitButton();
-        String isSubmitted = formPage.checkFormSubmission(formPage);
-        Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though the required Email was not sent.");
-    }
-
-    @Test
-    @Disabled
-    public void submitWithoutPhone() {
-        FormPage formPage = new FormPage(driver);
-        formPage.setFullName("Ali Sağlam");
-        formPage.setEmail("ali.saglam87@gmail.com");
-        //formPage.clickSubmitButton();
-        String isSubmitted = formPage.checkFormSubmission(formPage);
-        Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though the required Phone was not sent.");
-    }
-    //endregion
-
-    //region Submit with Different Email Types
-    //POSITIVE
-    @Test
-    @Disabled
-    public void sendEmailWithTruePattern() {
-        FormPage formPage = new FormPage(driver);
-        String emailSample = "username@domain.com";
-        formPage.setAllRequiredFilesWithoutEmail(formPage);
-        formPage.setEmail(emailSample);
-        //formPage.clickSubmitButton();
-        String isSubmitted = formPage.checkFormSubmission(formPage);
-        Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though wrong pattern:" + emailSample);}
-
-    //NEGATIVE
-    @Test
-    @Disabled
-    public void sendEmailWithWrongPattern1() {
-        FormPage formPage = new FormPage(driver);
-        String emailSample = "@domain.com";
-        formPage.setAllRequiredFilesWithoutEmail(formPage);
-        formPage.setEmail(emailSample);
-        //formPage.clickSubmitButton();
-        String isSubmitted = formPage.checkFormSubmission(formPage);
-        Assertions.assertEquals("Application can not submitted!", isSubmitted, "It was submitted even though wrong pattern:" + emailSample);}
-    //endregion
 }

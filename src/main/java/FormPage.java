@@ -1,25 +1,36 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
+/**
+ * This class represents the elements and specialized functionality of the Form Page.
+ * @author Başak Yılmaz
+ * @version 1.0
+ * @since 2024-08-03
+ */
 public class FormPage extends BasePage {
 
-    /*
-     * In the constructor method,
-     * call the parent class's constructor
-     * and ensure that when an object is created from the FormPage class in the tests,
-     * the driver opens the specified URL
+    /**
+     * Constructs a new instance of the {@code FormPage} class.
+     * This constructor initializes the page by calling the parent class's constructor and
+     * navigating the provided {@code WebDriver} to the specified URL.
+     *
+     * @param driver the {@code WebDriver} instance used to interact with the browser
+     * @see #Url
      */
     public FormPage(WebDriver driver) {
         super(driver);
         driver.get(Url);
     }
 
+    /**
+     * resumePath the path to the resume to be attached.
+     */
     String resumePath = "C:\\Users\\basak\\IdeaProjects\\commenics-test-camp-2024-form-page-automation\\Samples\\CV.pdf";
 
     //region Locators
     private final By logoLocator = By.cssSelector("a.main-header-logo");
-    private final By linkedlnApplyButtonLocator = By.xpath("//*[@id=\"application-form\"]/div[1]/ul/li[1]/div[2]/div/button");
     private final By learnMoreLocator = By.cssSelector("a.learn-more-link");
     private final By attachResumeLocator = By.cssSelector("input[data-qa='input-resume']");
     private final By fullNameLocator = By.cssSelector("input[data-qa='name-input']");
@@ -37,7 +48,6 @@ public class FormPage extends BasePage {
     private final By submitSuccessLocator = By.cssSelector("h3[data-qa='msg-submit-success']");
     public final By resumeSuccessLocator = By.xpath("//*[@id=\"application-form\"]/div[1]/ul/li[2]/label/div[2]/span[3]/div[2]");
     //endregion
-
 
     //region Set Elements
     public void setFullName(String fullNameTest) {
@@ -64,9 +74,7 @@ public class FormPage extends BasePage {
         type(linkedlnUrlLocator, linkedlnUrlTest);
     }
 
-    public void setStackOverFlowUrl(String stackOverFlowUrlTest) {
-        type(stackOverflowUrlLocator, stackOverFlowUrlTest);
-    }
+    public void setStackOverFlowUrl(String stackOverFlowUrlTest) {type(stackOverflowUrlLocator, stackOverFlowUrlTest);}
 
     public void seGitHubUrl(String githubUrlTest) {
         type(gitHubUrlLocator, githubUrlTest);
@@ -76,11 +84,8 @@ public class FormPage extends BasePage {
         type(portfolioUrlLocator, portfolioUrlTest);
     }
 
-    public void setAdditionalInformation(String additionalInformationTest) {
-        type(additionalInformationLocator, additionalInformationTest);
-    }
+    public void setAdditionalInformation(String additionalInformationTest) {type(additionalInformationLocator, additionalInformationTest);}
     //endregion
-
 
     //region Get Value of Elements
     public String getValueOfFullName() {
@@ -124,22 +129,13 @@ public class FormPage extends BasePage {
     }
     //endregion
 
-
     //region Click on the Elements
     public void clickLogo() {
         click(logoLocator);
     }
 
-    public void clickLinkedlnApplyButton() {
-        click(linkedlnApplyButtonLocator);
-    }
-
     public void clickLearnMore() {
         click(learnMoreLocator);
-    }
-
-    public void clickAttachResume() {
-        click(attachResumeLocator);
     }
 
     public void clickSubmitButton() {
@@ -151,21 +147,30 @@ public class FormPage extends BasePage {
     }
     //endregion
 
-
     //region Get Text of Elements
     public String getTextSubmitSuccess() {
         return getText(submitSuccessLocator);
     }
     //endregion
 
-
     //region attachResume Methods
-    public void attachResume(){type(attachResumeLocator, resumePath);}
-    public boolean isDisplayedSuccessResume(){return isDisplayed(resumeSuccessLocator);}
+    public void attachResume() {type(attachResumeLocator, resumePath);}
+
+    public boolean isDisplayedSuccessResume() {return isDisplayed(resumeSuccessLocator);}
     //endregion
 
-
     //region checkFormSubmission
+    /**
+     * Checks if the form was successfully submitted on the given {@code FormPage}.
+     * Retrieves the success message text and compares it to the expected message.
+     * If the success message element is not found, it indicates that the page may not have loaded.
+     * The {@code NoSuchElementException} is caught if the element is missing.
+     *
+     * @param formPage the {@code FormPage} instance
+     * @return a message indicating the result of the form submission:
+     *         "Application submitted!" if successful,
+     *         or "Application can not submitted!" if the success message is not found
+     */
     public String checkFormSubmission(FormPage formPage) {
         String message = null;
         try {
@@ -181,9 +186,19 @@ public class FormPage extends BasePage {
     //endregion
 
     //region setAllRequiredFilesWithoutEmail
-    public void setAllRequiredFilesWithoutEmail(FormPage formPage){
+    public void setAllRequiredFilesWithoutEmail(FormPage formPage) {
         formPage.setFullName("Ali Sağlam");
         formPage.setPhone("05555555555");
+    }
+    //endregion
+
+    //region Get Elements
+    public WebElement getResumeSuccessElement() {
+        try {
+            return find(resumeSuccessLocator);
+        } catch (NoSuchElementException e) {
+            return null;
+        }
     }
     //endregion
 
