@@ -12,7 +12,7 @@ public class WithSubmitTests extends BaseTest{
         formPage.setFullName("Ali Sağlam");
         formPage.setEmail("ali.saglam87@gmail.com");
         formPage.setPhone("05555555555");
-        //formPage.clickSubmitButton();
+        /*formPage.clickSubmitButton();*/
         String isSubmitted = formPage.checkFormSubmission(formPage);
         Assertions.assertEquals("Application submitted!", isSubmitted, "Although the required elements were provided, the form could not be submitted.");
     }
