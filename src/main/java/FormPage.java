@@ -27,7 +27,7 @@ public class FormPage extends BasePage {
     /**
      * resumePath the path to the resume to be attached.
      */
-    String resumePath = "C:\\Users\\basak\\IdeaProjects\\commenics-test-camp-2024-form-page-automation\\Samples\\CV.pdf";
+    String resumePath = "C:\\Users\\basak\\IdeaProjects\\commencis-test-camp-2024-app-form-test-automation-project\\Samples\\CV.pdf";
 
     //region Locators
     private final By logoLocator = By.cssSelector("a.main-header-logo");

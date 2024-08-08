@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 @Disabled("These tests require clicking the submit button.")
 public class WithSubmitTests extends BaseTest{
-
+    FormPage formPage;
     //region Submit Required Fields
     @Test
     public void submitOnlyRequiredFields() {
-        FormPage formPage = new FormPage(driver);
+        formPage = new FormPage(driver);
         formPage.setFullName("Name Lastname");
         formPage.setEmail("username@domain.com");
         formPage.setPhone("05555555555");
@@ -20,7 +20,7 @@ public class WithSubmitTests extends BaseTest{
     //NEGATIVE
     @Test
     public void submitWithoutFullname() {
-        FormPage formPage = new FormPage(driver);
+        formPage = new FormPage(driver);
         formPage.setEmail("Name Lastname");
         formPage.setPhone("username@domain.com");
         formPage.clickSubmitButton();
@@ -30,7 +30,7 @@ public class WithSubmitTests extends BaseTest{
 
     @Test
     public void submitWithoutEmail() {
-        FormPage formPage = new FormPage(driver);
+        formPage = new FormPage(driver);
         formPage.setFullName("Name Lastname");
         formPage.setPhone("username@domain.com");
         formPage.clickSubmitButton();
@@ -40,7 +40,7 @@ public class WithSubmitTests extends BaseTest{
 
     @Test
     public void submitWithoutPhone() {
-        FormPage formPage = new FormPage(driver);
+        formPage = new FormPage(driver);
         formPage.setFullName("Name Lastname");
         formPage.setEmail("username@domain.com");
         formPage.clickSubmitButton();
@@ -53,7 +53,7 @@ public class WithSubmitTests extends BaseTest{
     //POSITIVE
     @Test
     public void sendEmailWithTruePattern() {
-        FormPage formPage = new FormPage(driver);
+        formPage = new FormPage(driver);
         String emailSample = "username@domain.com";
         formPage.setAllRequiredFilesWithoutEmail(formPage);
         formPage.setEmail(emailSample);
@@ -64,7 +64,7 @@ public class WithSubmitTests extends BaseTest{
     //NEGATIVE
     @Test
     public void sendEmailWithWrongPattern1() {
-        FormPage formPage = new FormPage(driver);
+        formPage = new FormPage(driver);
         String emailSample = "@domain.com";
         formPage.setAllRequiredFilesWithoutEmail(formPage);
         formPage.setEmail(emailSample);
@@ -74,7 +74,7 @@ public class WithSubmitTests extends BaseTest{
 
     @Test
     public void sendEmailWithWrongPattern2() {
-        FormPage formPage = new FormPage(driver);
+        formPage = new FormPage(driver);
         String emailSample = "username@";
         formPage.setAllRequiredFilesWithoutEmail(formPage);
         formPage.setEmail(emailSample);
