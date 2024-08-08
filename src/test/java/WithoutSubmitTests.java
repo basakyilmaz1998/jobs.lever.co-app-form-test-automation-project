@@ -2,12 +2,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
 public class WithoutSubmitTests extends BaseTest {
     FormPage formPage;
+
     //region Open Pages
     @Test
     public void openJobOpportunitiesPage() {
@@ -16,6 +16,7 @@ public class WithoutSubmitTests extends BaseTest {
         String newUrl = driver.getCurrentUrl();
         Assertions.assertEquals("https://jobs.lever.co/commencis", newUrl);
     }
+
     @Test
     public void openLearnMorePage() {
         formPage = new FormPage(driver);
