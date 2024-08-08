@@ -11,7 +11,11 @@ The page will remain open until August 15, 2024.
 
 Make sure 'chromedriver.exe' version:127.0.6533.99, compatible with your Chrome browser.<br>
 You can find your current Chrome version under Settings > About Chrome <br>
-Update the path to 'chromedriver.exe' in the value parameter of the property with the key webdriver.chrome.driver located in 'src/test/java/BaseTest.java'
+Update the path to 'chromedriver.exe' in the value parameter of the property with the key 'webdriver.chrome.driver' located in 'src/test/java/BaseTest.java'
+
+- resumePath
+
+Make sure that the 'resumePath' variable in the 'src/main/java/FormPage.java' class contains the correct absolute path for the resume.
 
 ## Test Classes
 
@@ -30,9 +34,7 @@ Content: Positive and negative tests for filling required fields, and positive a
 
 ## Built With
 * Programming Languages: Java
-* Version Control: Git
 * Environment: JDK 17.0.10
-* IDE: IntelliJ IDEA 2023.3.6
 * Maven 2.22.0
 * Log4j 1.2.17
 * JUnit 5.10.1
