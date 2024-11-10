@@ -2,7 +2,7 @@
 
 # Jobs.lever.co Test Automation Project
 
-This is a software test automation for the application form of the Commencis Test Camp 2024, created via the Lever company. <br>
+This is a software test automation for the application form, created via the Lever company. <br>
 The page will remain open until August 15, 2024.
  
 ### Prerequisites
